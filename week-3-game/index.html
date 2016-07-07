@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  	<title>Psychic Game</title>
+
+</head>
+
+<body id="Game" onkeyup="guess(event)">
+	
+	</div>
+
+
+
+<!-- // VARIABLES -->
+<script type="text/javascript">
+
+        // var userPick = prompt ("Pick a letter to begin the game")
+//user picks a letter
+        var userGuess = ""
+        var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
+               "p","q","r","s","t","u","v","w","x","y","z"];
+        var guesses = 9;
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = '' + guesses + '';
+        var lettersGuessed = []
+        var computerGuess =  computerChoices[Math.floor(Math.random() * computerChoices.length)];;
+        var gameOver = false;
+
+        var letterToGuess = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
+               "p","q","r","s","t","u","v","w","x","y","z"];
+
+        var header = '<h2>The Psychic Game</h2>';
+        var instruction = "<p><strong>Guess what letter I'm thinking of:</strong></p>"
+        document.body.innerHTML = header + instruction;
+        function guess(event) {
+            var userGuess = event.key.toLowerCase();
+            lettersGuessed.push(userGuess);
+            console.log(userGuess);
+
+            if (computerGuess === userGuess)
+            {
+                wins++;
+                alert ("You won!")
+                lettersGuessed = [];
+                computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];;
+            }
+            else if (guessesLeft >=1);
+            {
+                guesses--;
+                // confirm("Wrong! You have " + guesses + " tries remaining ");
+            }
+            // else
+            // {
+            //     losses++;
+            // }
+            
+
+        var html = header +  "<p><strong>Guess what letter I'm thinking of</strong></p>" +
+        "<p>Wins: " +
+        wins +
+        "</p>" +
+        "<p>Losses: " +
+        losses +
+        "</p>" +
+        "<p>Guesses Left: " +
+        guessesLeft +
+        "</p>" +
+        "<p>Letters:  " + lettersGuessed + "</p>";
+
+        document.body.innerHTML = html;
+
+        // if (userPick === computerPick){
+        //     wins += +1;
+        // }else {
+        //     guesses -= -1;
+
+        // }
+
+    };
+
+  
+//       // var random = [Math.random() optionsLength = options.length)];
+//       var computerGuess = options[Math.floor(random*options.length)];
+//       var computerGuess = Math.floor(Math.random() * letters.length);
+//       letterToGuess = letters[letterIndex];
+
+//       // var letters = ['a','b','c'];
+//       // var pickedLetter = letters[Math.floor(Math.random * letters.length)];
+// ​
+//       console.log(pickedLetter);
+
+ </script>
+
+ </body>
+ </html>
